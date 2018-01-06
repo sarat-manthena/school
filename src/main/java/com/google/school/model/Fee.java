@@ -1,7 +1,16 @@
 package com.google.school.model;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Embeddable
 public class Fee {
+	@Column(insertable = true, updatable = false)
 	int yearlyFee;
+	@Column(insertable = true, updatable = false)
 	int feePaid;
 	
 	public int getYearlyFee() {

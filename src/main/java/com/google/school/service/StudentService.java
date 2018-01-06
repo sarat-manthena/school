@@ -25,7 +25,7 @@ public class StudentService {
 	}
 	
 	public int addStudent(Student s) {
-		studentArray.add(s);
+		studentArray.add(s);		
 		return s.getRollNo();
 	}
 	
@@ -46,6 +46,16 @@ public class StudentService {
 		Student s = new Student();
 		for(int i=0; i< studentArray.size(); i++) {
 			if(studentArray.get(i).getRollNo() == rollNo) {
+				return studentArray.get(i);
+			}
+		}
+		return s;
+	}
+	
+	public Student listStudentInSection(String className) {
+		Student s = new Student();
+		for(int i=0;i<studentArray.size();i++) {
+			if(studentArray.get(i).getClassName() == className) {
 				return studentArray.get(i);
 			}
 		}
